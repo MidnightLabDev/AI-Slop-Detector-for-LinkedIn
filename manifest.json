@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "AI Slop Detector for LinkedIn®",
+  "short_name": "AI Slop Detector",
+  "version": "0.3.0",
+  "minimum_chrome_version": "114",
+  "description": "Analyze visible LinkedIn post text for low substance writing patterns using your own Jev API key.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://api.typesafe.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Slop Detector for LinkedIn®"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png",
+    "32": "icons/32.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "js": [
+        "policy.js",
+        "feed-dom.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; connect-src https://api.typesafe.ai"
+  },
+  "author": "Mayas Ötegen",
+  "homepage_url": "https://www.midnightlab.dev/"
+}

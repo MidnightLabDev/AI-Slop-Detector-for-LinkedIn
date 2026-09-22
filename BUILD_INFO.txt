@@ -1,0 +1,7 @@
+AI Slop Detector for LinkedIn® 0.3.0
+Created by Mayas Ötegen
+Homepage: https://www.midnightlab.dev/
+Support: https://www.linkedin.com/in/mayasotegen/
+Jev model: jev-1.13.0
+Detector rubric: 2026.09.22.1
+Benchmark: 500 posts, including 150 hard negatives

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AI Slop Detector for LinkedIn®</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" type="module"></script>
+</head>
+<body class="popup detector-popup">
+<header class="brand brand-lockup">
+  <span class="logo-mark" aria-hidden="true"><span>S</span></span>
+  <span class="brand-copy"><strong>AI SLOP DETECTOR</strong><small>for LinkedIn®</small></span>
+  <span class="tag">YOUR KEY</span>
+</header>
+<h1>Less noise.<br><em>Your own Jev.</em></h1>
+<section class="key-panel" aria-label="Jev API key"><div class="key-title"><label for="apiKey">Your Jev API key</label><span id="keyStatus">No key saved</span></div><form id="keyForm"><div class="key-input"><input id="apiKey" type="password" placeholder="Paste your Jev API key" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="2048"><button id="showKey" type="button" aria-label="Show typed API key">Show</button></div><label class="remember"><input id="remember" type="checkbox">Remember on this device</label><p class="hint" id="retentionNote">Unchecked: cleared when Chrome restarts or the extension reloads.</p><div class="key-actions"><button type="submit" class="primary" id="saveKey">Save key</button><button type="button" class="secondary" id="testKey" disabled>Test key</button><button type="button" class="link" id="removeKey" hidden>Remove</button></div></form><p class="hint">Scanning sends visible LinkedIn post text directly to TypeSafe using your key. Test key sends one small sample request. API usage is billed to your TypeSafe account.</p></section>
+<p class="notice" id="notice" role="status" aria-live="polite"></p>
+<div class="status-row"><div><div class="status-title" id="statusTitle">Scanning is off</div><div class="small" id="dailyUsage">0 of 300 requests today</div></div><label class="switch"><input id="enabled" type="checkbox" aria-label="Scan visible LinkedIn posts" disabled><span class="track"></span></label></div>
+<div class="metrics"><div class="metric"><span class="number" id="found">0</span><span class="label">posts found</span></div><div class="metric"><span class="number" id="scanned">0</span><span class="label">checked</span></div><div class="metric"><span class="number" id="flagged">0</span><span class="label">flagged</span></div></div>
+<p class="hint" id="feedStatus" role="status" aria-live="polite">Open LinkedIn to check posts.</p><button class="primary scan-button" id="scan" disabled>Start scanning</button>
+<details class="feed-diagnostics"><summary>Feed details · v0.3.0</summary><p id="feedDetails">No feed connection yet.</p></details>
+<details class="preferences"><summary>Detection preferences</summary><div class="setting"><div><strong>Show the red SLOP stamp</strong></div><label class="switch"><input id="showStamp" type="checkbox" checked aria-label="Show the SLOP stamp"><span class="track"></span></label></div><label for="threshold">Minimum slop score <strong id="thresholdLabel">85%</strong></label><input id="threshold" class="range" type="range" min="60" max="98" value="85"><p class="hint">Arabic, Turkish and mixed text are experimental and use at least 95%.</p><label class="daily-setting" for="dailyLimit">Daily request limit<input id="dailyLimit" type="number" min="10" max="10000" step="1" value="300"></label><button id="saveLimit" class="secondary">Save limit</button><p class="hint">Local guard only. Includes key tests and failed requests. Resets at midnight UTC. Other uses of this API key are outside this limit.</p></details>
+<footer class="footer footer-links"><span><a href="about.html" target="_blank" rel="noopener">About</a> · <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></span><span>By <a href="https://www.linkedin.com/in/mayasotegen/" target="_blank" rel="noopener noreferrer">Mayas Ötegen</a></span></footer>
+</body>
+</html>
