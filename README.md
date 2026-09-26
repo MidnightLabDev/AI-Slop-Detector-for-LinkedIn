@@ -19,6 +19,8 @@ No Node installation, terminal command, server deployment or Cloudflare setup is
 
 The default key mode uses Chrome extension session storage. Select **Remember on this device** if you want Chrome extension local storage to retain the key. The key is sent only to TypeSafe from the extension background worker and is never returned to the LinkedIn content script.
 
+Get your key from here: https://console.typesafe.ai/keys
+
 ## What it checks
 
 The detector evaluates visible post text for five patterns: formulaic filler, engagement bait, generic motivation, empty business jargon and pseudo insight. The score describes writing patterns and does not prove whether AI was used. Surface style alone is not enough to trigger a flag. Concrete evidence, methods, examples, constraints and useful instructions count against a slop result.
